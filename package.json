@@ -9,8 +9,16 @@
     "@mdx-js/loader": "^1.5.1",
     "@mdx-js/react": "^1.6.18",
     "@next/mdx": "^9.1.1",
+    "babel-plugin-styled-components": "^2.0.7",
     "next": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.5.1"
   }
 }
