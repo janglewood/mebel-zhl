@@ -1,0 +1,180 @@
+.text-wrapper {
+  color: $font__black;
+  word-break: break-word;
+  white-space: pre-wrap;
+
+  & > .text-inner-html {
+    & > * {
+      all: inherit;
+    }
+
+    & h4 {
+      font-size: 28px;
+      line-height: 36.4px;
+      font-weight: 900;
+    }
+
+    & a {
+      text-decoration: none;
+      color: $font__link-blue;
+    }
+  }
+
+  &.error {
+    color: $font__error;
+  }
+
+  &.h1 {
+    font-family: "Inter";
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 57.6px;
+    @media only screen and (max-width: 768px) {
+      & {
+        font-size: 32px;
+        line-height: 38.4px;
+      }
+    }
+  }
+
+  &.h2 {
+    font-family: "Inter";
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 36.4px;
+    @media only screen and (max-width: 768px) {
+      & {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  &.p1 {
+    font-family: "Inter";
+    font-weight: 400;
+    @media only screen and (max-width: 768px) {
+      & {
+        font-size: 16px;
+        line-height: 24.8px;
+      }
+    }
+  }
+
+  &.p2 {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25.2px;
+
+    @media only screen and (max-width: 768px) {
+      & {
+        font-size: 13px;
+        line-height: 18.85px;
+      }
+    }
+  }
+
+  &.text {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30.6px;
+    @media only screen and (max-width: 768px) {
+      & {
+        font-size: 16px;
+        line-height: 24.8px;
+      }
+    }
+  }
+
+  &.subtitle {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20.3px;
+    color: $font__gray;
+    @media only screen and (max-width: 768px) {
+      & {
+        font-size: 13px;
+        line-height: 18.85px;
+        &.centered {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &.button-text {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25.2px;
+
+    @media only screen and (max-width: 768px) {
+      & {
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 18.85px;
+      }
+    }
+  }
+
+  &.footer-text {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18.85px;
+    color: $font__gray;
+  }
+
+  &.form-text {
+    font-family: "Inter";
+    font-weight: 600;
+    color: $font__black;
+    @media only screen and (max-width: 768px) {
+      & {
+        font-size: 16px;
+        line-height: 24.8px;
+      }
+    }
+  }
+
+  &.social-links-text {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18.85px;
+    color: $font__white;
+  }
+
+  &.toy-item-description {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24.8px;
+  }
+
+  &.faq-question {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  &.description-text {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23.2px;
+    color: $font__gray;
+
+    @media only screen and (max-width: 768px) {
+      & {
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 18.85px;
+      }
+    }
+  }
+}
