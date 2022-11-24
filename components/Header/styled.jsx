@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { Text } from "@/components/Text";
-import { theme } from "theme";
 
 export const HeaderWrapper = styled.span`
   display: flex;
@@ -29,12 +28,12 @@ export const NavLink = styled(Link)`
 
 export const NavText = styled(Text)`
   font-weight: initial;
-  color: ${theme.palette.fonts.navLink};
+  color: ${({ theme }) => theme.palette.fonts.navLink};
 `;
 
 export const ActiveNavText = styled(NavText)`
   font-weight: 700;
-  color: ${theme.palette.fonts.navLinkActive};
+  color: ${({ theme }) => theme.palette.fonts.navLinkActive};
   position: relative;
 
   &::after {
@@ -44,7 +43,7 @@ export const ActiveNavText = styled(NavText)`
     position: absolute;
     width: 100%;
     height: 4px;
-    background-color: ${theme.palette.fonts.navLinkActive};
+    background-color: ${({ theme }) => theme.palette.fonts.navLinkActive};
     border-radius: 0 0 4px 4px;
   }
 `;

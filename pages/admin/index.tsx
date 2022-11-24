@@ -1,5 +1,6 @@
 import { useRequireAuth } from "../../hooks/useRequireAuth";
 import { useCatalog } from "../../hooks/useCatalog";
+import { Button } from "@/components/Admin/Button";
 
 const Admin = (): JSX.Element => {
   const { logout } = useRequireAuth();
@@ -17,7 +18,7 @@ const Admin = (): JSX.Element => {
         ))}
       </ul>
 
-      <button onClick={logout}>SignOut</button>
+      <Button onClick={logout} text="Выйти из аккаунта"></Button>
     </div>
   );
 };

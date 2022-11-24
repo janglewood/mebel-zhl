@@ -1,4 +1,3 @@
-import { theme } from "theme";
 import styled, { css } from "styled-components";
 
 export const stylesMap = {
@@ -19,7 +18,7 @@ export const stylesMap = {
     font-weight: inherit;
     font-size: 18px;
     line-height: 20px;
-    color: ${theme.palette.fonts.nav};
+    color: ${({ theme }) => theme.palette.fonts.nav};
   `,
 };
 
