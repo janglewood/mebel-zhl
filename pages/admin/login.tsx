@@ -1,17 +1,14 @@
-import { useCallback, useEffect, useState } from "react";
-// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
-import { auth, db } from "../utils/firebase/index";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useAuth } from "../hooks/useAuth";
+import { useEffect, useState } from "react";
+import { useAuth } from "../../hooks/useAuth";
 import { useRouter } from "next/router";
+import { User } from "interfaces/user";
 
-const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Login = (): JSX.Element => {
+  const [email, setEmail] = useState<User["email"]>("");
+  const [password, setPassword] = useState<string>("");
 
   const router = useRouter();
-  const { signIn, user, isLoading } = useAuth();
+  const { signIn, user } = useAuth();
 
   useEffect(() => {
     if (user) {
@@ -19,9 +16,7 @@ const Login = () => {
     }
   }, [user, router]);
 
-  return isLoading ? (
-    <div>blyat</div>
-  ) : (
+  return (
     <div>
       <h1>Login</h1>
       <form

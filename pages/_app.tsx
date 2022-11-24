@@ -1,15 +1,14 @@
 import Layout from "../components/layout";
 import "fonts.css";
-import { useRouter } from "next/router";
-import { useMemo } from "react";
+import { Router, useRouter } from "next/router";
 import { AuthProvider } from "../hooks/useAuth";
 import { CatalogProvider } from "../hooks/useCatalog";
+import { AppProps } from "next/app";
 
-const pagesWithoutLayout = ["/admin", "/login"];
+const pagesWithoutLayout = ["/admin", "/admin/login"];
 
-export default function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   const { pathname } = useRouter();
-
   return (
     <AuthProvider>
       <CatalogProvider>
@@ -23,4 +22,6 @@ export default function App({ Component, pageProps }) {
       </CatalogProvider>
     </AuthProvider>
   );
-}
+};
+
+export default App;

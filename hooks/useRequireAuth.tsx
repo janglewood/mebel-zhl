@@ -1,8 +1,10 @@
-import { useAuth } from "./useAuth";
+import { AuthContext, useAuth } from "./useAuth";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-export const useRequireAuth = (redirectUrl = "/login") => {
+export const useRequireAuth = (
+  redirectUrl: string = "/admin/login"
+): AuthContext => {
   const auth = useAuth();
   const router = useRouter();
 

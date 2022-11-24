@@ -1,7 +1,7 @@
-import { useRequireAuth } from "../hooks/useRequireAuth";
-import { useCatalog } from "../hooks/useCatalog";
+import { useRequireAuth } from "../../hooks/useRequireAuth";
+import { useCatalog } from "../../hooks/useCatalog";
 
-const Admin = () => {
+const Admin = (): JSX.Element => {
   const { logout } = useRequireAuth();
 
   const { catalog, isLoading } = useCatalog();

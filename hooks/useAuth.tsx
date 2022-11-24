@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { collection, addDoc } from "firebase/firestore";
 import {
   createUserWithEmailAndPassword,
@@ -8,14 +14,27 @@ import {
   signOut,
 } from "firebase/auth";
 import { db } from "../utils/firebase/index";
+import { User } from "../interfaces/user";
 
-const authContext = createContext({ user: {} });
+type Response = Promise<void | { error?: { message: string } }>;
+
+export interface AuthContext {
+  user: User;
+  isLoading: boolean | null;
+  signUp: (email: User["email"], password: string) => Response;
+  signIn: (email: User["email"], password: string) => Response;
+  logout: () => Response;
+}
+
+const authContext = createContext({ user: {} } as AuthContext);
 const { Provider } = authContext;
 
-export function AuthProvider({ children }) {
+export const AuthProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}): JSX.Element => {
   const auth = useAuthProvider();
   return <Provider value={auth}>{children}</Provider>;
-}
+};
 
 const useAuthProvider = () => {
   const [user, setUser] = useState(null);
