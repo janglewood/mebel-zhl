@@ -1,5 +1,6 @@
 import {
   createContext,
+  FC,
   ReactNode,
   useContext,
   useEffect,
@@ -22,14 +23,20 @@ export interface AuthContext {
   user: User;
   isLoading: boolean | null;
   signUp: (email: User["email"], password: string) => Response;
-  signIn: (email: User["email"], password: string) => Response;
+  signIn: ({
+    email,
+    password,
+  }: {
+    email: User["email"];
+    password: string;
+  }) => Response;
   logout: () => Response;
 }
 
 const authContext = createContext({ user: {} } as AuthContext);
 const { Provider } = authContext;
 
-export const AuthProvider: React.FC<{ children: ReactNode }> = ({
+export const AuthProvider: FC<{ children: ReactNode }> = ({
   children,
 }): JSX.Element => {
   const auth = useAuthProvider();
@@ -64,13 +71,21 @@ const useAuthProvider = () => {
     }
   };
 
-  const signIn = async (email, password) => {
+  const signIn = async ({ email, password }) => {
     try {
-      const { user } = await signInWithEmailAndPassword(auth, email, password);
-
-      console.log("data form signin: ", user);
+      await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
-      throw new Error(error);
+      let message = "Ошибка";
+
+      if (error.code === "auth/wrong-password") {
+        message = "Неправильный пароль";
+      } else if (error.code === "auth/user-not-found") {
+        message = "Пользователя с таким email не существует";
+      } else if (error.code === "auth/too-many-requests") {
+        message = "Слишком много запросов. Попробуйте позже";
+      }
+
+      throw Error(message);
     }
   };
 

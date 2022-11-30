@@ -1,23 +1,26 @@
 import Layout from "../components/layout";
 import "../styles/fonts.css";
 import { useRouter } from "next/router";
-import { AuthProvider } from "../hooks/useAuth";
-import { CatalogProvider } from "../hooks/useCatalog";
+import { CatalogProvider, AuthProvider } from "@/hooks";
 import { AppProps } from "next/app";
 import { FC } from "react";
 import { ThemeProvider } from "styled-components";
 import { theme } from "styles/theme";
+import { AdminLayout } from "@/components/Admin/AdminLayout";
 
-const pagesWithoutLayout = ["/admin", "/admin/login"];
+const adminPages = ["/admin", "/admin/login", "/admin/[id]", "/admin/add"];
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   const { pathname } = useRouter();
+
   return (
     <AuthProvider>
       <CatalogProvider>
         <ThemeProvider theme={theme}>
-          {pagesWithoutLayout.includes(pathname) ? (
-            <Component {...pageProps} />
+          {adminPages.includes(pathname) ? (
+            <AdminLayout>
+              <Component {...pageProps} />
+            </AdminLayout>
           ) : (
             <Layout>
               <Component {...pageProps} />
