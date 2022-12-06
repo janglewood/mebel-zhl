@@ -9,8 +9,9 @@ import {
 } from "./styled";
 import { useRouter } from "next/router";
 import { navigationConfig } from "./navigationConfig";
+import { FC } from "react";
 
-export const Header = () => {
+export const Header: FC = () => {
   const { pathname } = useRouter();
   return (
     <HeaderWrapper>
@@ -22,13 +23,9 @@ export const Header = () => {
           return (
             <NavLink href={href} key={title}>
               {pathname === href ? (
-                <ActiveNavText type="nav-link" isActive={pathname === href}>
-                  {title}
-                </ActiveNavText>
+                <ActiveNavText type="nav-link">{title}</ActiveNavText>
               ) : (
-                <NavText type="nav-link" isActive={pathname === href}>
-                  {title}
-                </NavText>
+                <NavText type="nav-link">{title}</NavText>
               )}
             </NavLink>
           );

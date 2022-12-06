@@ -36,7 +36,7 @@ export const LoginForm: FC = () => {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit(onSubmit)}>
+    <StyledForm onSubmit={handleSubmit(onSubmit)} isLoginForm>
       <InputWrapper>
         <label htmlFor="email">
           <Text type="text">Email</Text>
