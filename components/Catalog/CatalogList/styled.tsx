@@ -17,7 +17,7 @@ const CatalogItemActiveStyles = css`
 
 export const CatalogItem = styled.div<{ isActive: boolean }>`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   padding: 12px 36px;
 

@@ -31,7 +31,6 @@ export const stylesMap: Record<
     font-weight: inherit;
     font-size: 18px;
     line-height: 20px;
-    color: ${({ theme }) => theme.palette.fonts.navLink};
   `,
   text: css`
     font-weight: inherit;
@@ -52,7 +51,6 @@ export const stylesMap: Record<
   "button-text": css`
     font-weight: 700;
     font-size: 18px;
-    color: ${({ theme }) => theme.palette.fonts.white};
     text-decoration: none;
   `,
   "description-text": css`
@@ -60,7 +58,6 @@ export const stylesMap: Record<
     font-weight: 300;
     font-size: 18px;
     line-height: 32.7px;
-    color: ${({ theme }) => theme.palette.fonts.black};
   `,
   error: css`
     font-weight: 400;

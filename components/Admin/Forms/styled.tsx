@@ -1,7 +1,7 @@
 import { Text } from "@/components/Text";
 import styled from "styled-components";
 
-export const StyledForm = styled.form<{ isLoginForm: boolean }>`
+export const StyledForm = styled.form<{ isLoginForm?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -28,7 +28,11 @@ declare module "styled-components" {
           primary: string;
           disabled: string;
           secondary: string;
+          green: string;
         };
+      };
+      shadows: {
+        itemCard: string;
       };
       gradients: {
         mainButtonGradient: string;

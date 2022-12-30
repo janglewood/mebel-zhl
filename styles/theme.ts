@@ -15,6 +15,10 @@ export const GlobalStyles = createGlobalStyle`
   * {
       box-sizing: border-box;
   }
+
+  ul {
+    padding: 0;
+  }
 `;
 
 export const theme: DefaultTheme = {
@@ -43,7 +47,11 @@ export const theme: DefaultTheme = {
         primary: "#5454ba",
         disabled: "#9d9da5",
         secondary: "transparent",
+        green: "#BBFFDE",
       },
+    },
+    shadows: {
+      itemCard: `0px 4px 8px #757ca580`,
     },
     gradients: {
       mainButtonGradient:

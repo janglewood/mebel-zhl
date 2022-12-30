@@ -9,7 +9,7 @@ import {
 } from "react";
 import { useRequireAuth } from "@/hooks";
 import { useForm } from "react-hook-form";
-import { Button } from "@/components/Admin/Button";
+import { Button } from "@/components/Button";
 import {
   ImagePreview,
   InputWrapper,

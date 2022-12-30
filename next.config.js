@@ -21,5 +21,14 @@ module.exports = withMDX({
       },
     ];
   },
+  images: {
+    dangerouslyAllowSVG: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "firebasestorage.googleapis.com",
+      },
+    ],
+  },
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
 });

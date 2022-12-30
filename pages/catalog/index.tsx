@@ -1,50 +1,29 @@
 import { CatalogImage } from "@/components/Catalog/CatalogImage";
 import { CatalogList } from "@/components/Catalog/CatalogList";
 import { CatalogListWrapper } from "@/components/Catalog/CatalogList/styled";
+import CatalogBlock from "@/components/CatalogBlock";
 import { useCatalog } from "hooks/useCatalog";
 import { CatalogItem } from "interfaces/catalog";
-import { FC, useMemo, useState } from "react";
+import { FC } from "react";
 import { getCatalog } from "services/catalog";
-import {
-  CatalogWrapper,
-  MaterialsBlock,
-  TopCatalogListBlock,
-} from "../home/styled";
+import { TopCatalogListBlock } from "../home/styled";
+import { CatalogPageWrapper } from "./styled";
 
 const Catalog: FC<{ catalog: CatalogItem[] }> = ({ catalog }) => {
-  const [currentItemId, setCurrentItemId] = useState(catalog[0].id);
-
-  const currentItem = useMemo(
-    () => catalog.find(({ id }) => id === currentItemId),
-    [currentItemId]
-  );
-
   return (
-    <CatalogWrapper>
+    <CatalogPageWrapper>
       <TopCatalogListBlock>
-        <CatalogList
-          catalog={catalog}
-          currentItemId={currentItemId}
-          setCurrentItemId={setCurrentItemId}
-        />
-        <CatalogImage imgLink={currentItem.imgLink} />
+        <CatalogBlock catalog={catalog} />
       </TopCatalogListBlock>
-
-      <MaterialsBlock></MaterialsBlock>
-    </CatalogWrapper>
+    </CatalogPageWrapper>
   );
 };
 
 export async function getStaticProps({ res, req }) {
-  //   res.setHeader(
-  //     "Cache-Control",
-  //     "public, s-maxage=10, stale-while-revalidate=30"
-  //   );
-
   const catalog = await getCatalog();
 
   return {
-    props: { catalog }, // will be passed to the page component as props
+    props: { catalog },
   };
 }
 

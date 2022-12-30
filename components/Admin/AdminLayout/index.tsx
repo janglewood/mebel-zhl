@@ -1,6 +1,6 @@
 import { AdminHeader, AdminLayoutWrapper, ContentWrapper } from "./styled";
 import LeftArrowIcon from "@/assets/icons/left-arrow.svg";
-import { Button } from "@/components/Admin/Button";
+import { Button } from "@/components/Button";
 import { useRouter } from "next/router";
 import { Text } from "@/components/Text";
 import { useRequireAuth } from "@/hooks";

@@ -9,4 +9,5 @@ export const FooterWrapper = styled.footer`
   width: 100%;
   border-top: 1px solid gray;
   padding: 32px 0;
+  margin-top: 64px;
 `;

@@ -20,7 +20,9 @@ export const CatalogList = ({
       {catalog.map(({ id, title }) => (
         <CatalogItem
           key={id}
-          onClick={() => setCurrentItemId(id)}
+          onClick={() => {
+            setCurrentItemId(id);
+          }}
           isActive={currentItemId === id}
         >
           <Text type="h2">{title}</Text>

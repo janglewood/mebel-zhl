@@ -1,8 +1,8 @@
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { Text } from "@/components/Text";
 import { FC } from "react";
-import { theme } from "styles/theme";
-import { StyledButton } from "./styled";
+import { useTheme } from "styled-components";
+import { StyledAnimationItem, StyledButton } from "./styled";
 
 export interface IProps {
   text?: string;
@@ -12,6 +12,7 @@ export interface IProps {
   isLoading?: boolean;
   variant: "primary" | "disabled" | "secondary";
   style?: React.CSSProperties;
+  useHoverAnimation?: boolean;
 }
 
 export const Button: FC<IProps> = ({
@@ -19,19 +20,28 @@ export const Button: FC<IProps> = ({
   onClick,
   type,
   isLoading,
+  useHoverAnimation,
   variant,
   children,
   style,
 }) => {
+  const theme = useTheme();
   return (
     <StyledButton
       onClick={onClick}
       type={type || "button"}
       variant={variant}
       style={style}
+      useHoverAnimation={useHoverAnimation}
     >
       {isLoading ? (
-        <LoadingSpinner />
+        <LoadingSpinner
+          color={
+            variant === "primary"
+              ? theme.palette.fonts.white
+              : theme.palette.fonts.primary
+          }
+        />
       ) : text ? (
         <Text
           type="button-text"
@@ -42,6 +52,10 @@ export const Button: FC<IProps> = ({
       ) : (
         children
       )}
+      <StyledAnimationItem n={1} />
+      <StyledAnimationItem n={2} />
+      <StyledAnimationItem n={3} />
+      <StyledAnimationItem n={4} />
     </StyledButton>
   );
 };
