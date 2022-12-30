@@ -2,11 +2,12 @@ import Link from "next/link";
 import styled from "styled-components";
 import { Text } from "@/components/Text";
 
-export const HeaderWrapper = styled.span`
+export const HeaderWrapper = styled.header`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 `;
 
 export const NavWrapper = styled.nav`
@@ -18,9 +19,7 @@ export const NavWrapper = styled.nav`
   margin: 0 auto;
 `;
 
-export const LogoWrapper = styled(Link)`
-  padding: 0 130px;
-`;
+export const LogoWrapper = styled(Link)``;
 
 export const NavLink = styled(Link)`
   text-decoration: none;

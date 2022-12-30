@@ -2,7 +2,7 @@ import { FC, useEffect, useMemo, useRef, useState } from "react";
 import { useAuth } from "@/hooks";
 import { useForm } from "react-hook-form";
 import { User } from "interfaces/user";
-import { Button } from "@/components/Admin/Button";
+import { Button } from "@/components/Button";
 import { InputWrapper, StyledForm, StyledInput } from "../styled";
 import { Text } from "@/components/Text";
 
@@ -36,7 +36,7 @@ export const LoginForm: FC = () => {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit(onSubmit)}>
+    <StyledForm onSubmit={handleSubmit(onSubmit)} isLoginForm>
       <InputWrapper>
         <label htmlFor="email">
           <Text type="text">Email</Text>

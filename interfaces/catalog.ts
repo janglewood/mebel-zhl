@@ -1,5 +1,5 @@
 export interface CatalogItem {
-  id?: string;
+  id: string;
   imgLink?: string;
   headImg?: FileList;
   title: string;

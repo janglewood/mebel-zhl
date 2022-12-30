@@ -10,6 +10,7 @@ declare module "styled-components" {
         navLink: string;
         navLinkActive: string;
         white: string;
+        black: string;
         error: string;
       };
       colors: {
@@ -21,11 +22,20 @@ declare module "styled-components" {
         error: string;
       };
       backgrounds: {
+        main: string;
+        homepage: string;
         buttons: {
           primary: string;
           disabled: string;
           secondary: string;
+          green: string;
         };
+      };
+      shadows: {
+        itemCard: string;
+      };
+      gradients: {
+        mainButtonGradient: string;
       };
     };
   }

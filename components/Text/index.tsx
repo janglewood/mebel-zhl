@@ -7,7 +7,14 @@ import styled, {
 import { theme } from "styles/theme";
 import { FieldErrors } from "../../types";
 
-type TextTypes = "h1" | "text" | "nav-link" | "button-text" | "error";
+type TextTypes =
+  | "h1"
+  | "h2"
+  | "text"
+  | "nav-link"
+  | "button-text"
+  | "error"
+  | "description-text";
 
 interface IText {
   type: TextTypes;
@@ -21,35 +28,38 @@ export const stylesMap: Record<
   FlattenInterpolation<ThemeProps<DefaultTheme>>
 > = {
   "nav-link": css`
-    font-family: Comfortaa;
     font-weight: inherit;
     font-size: 18px;
     line-height: 20px;
-    color: ${({ theme }) => theme.palette.fonts.navLink};
   `,
   text: css`
-    font-family: Comfortaa;
     font-weight: inherit;
     font-size: 18px;
     line-height: 20px;
-    color: ${({ theme }) => theme.palette.fonts.primary};
   `,
   h1: css`
-    font-family: Comfortaa;
     font-weight: inherit;
     font-size: 36px;
     font-weight: 700;
-    color: ${({ theme }) => theme.palette.fonts.primary};
+  `,
+  h2: css`
+    font-weight: inherit;
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 400;
   `,
   "button-text": css`
-    font-family: Comfortaa;
     font-weight: 700;
     font-size: 18px;
-    color: ${({ theme }) => theme.palette.fonts.white};
     text-decoration: none;
   `,
+  "description-text": css`
+    font-family: Nunito;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 32.7px;
+  `,
   error: css`
-    font-family: Comfortaa;
     font-weight: 400;
     font-size: 14px;
     color: ${({ theme }) => theme.palette.fonts.error};
@@ -57,7 +67,9 @@ export const stylesMap: Record<
 };
 
 export const Text = styled.span<IText>`
+  color: ${({ theme, color }) =>
+    color ? theme.palette.fonts[color] : theme.palette.fonts.primary};
+  font-family: Comfortaa;
   ${({ style }) => ({ ...style })};
   ${({ type }) => stylesMap[type]};
-  color: ${({ color, theme }) => (color ? theme.palette.fonts[color] : "")};
 `;

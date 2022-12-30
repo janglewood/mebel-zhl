@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { useRequireAuth, useCatalog } from "@/hooks";
 
-import { Button } from "@/components/Admin/Button";
+import { Button } from "@/components/Button";
 import { Text } from "@/components/Text";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import {

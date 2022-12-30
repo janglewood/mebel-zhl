@@ -1,12 +1,12 @@
 import { Text } from "@/components/Text";
 import styled from "styled-components";
 
-export const StyledForm = styled.form`
+export const StyledForm = styled.form<{ isLoginForm?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 640px;
+  max-width: ${({ isLoginForm }) => (isLoginForm ? "640px" : "unset")};
   width: 100%;
   gap: 16px;
 `;

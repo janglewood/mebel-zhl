@@ -1,6 +1,6 @@
-import { AdminHeader, ContentWrapper } from "./styled";
+import { AdminHeader, AdminLayoutWrapper, ContentWrapper } from "./styled";
 import LeftArrowIcon from "@/assets/icons/left-arrow.svg";
-import { Button } from "@/components/Admin/Button";
+import { Button } from "@/components/Button";
 import { useRouter } from "next/router";
 import { Text } from "@/components/Text";
 import { useRequireAuth } from "@/hooks";
@@ -10,7 +10,7 @@ export const AdminLayout = ({ children }) => {
   const { user, logout } = useRequireAuth();
 
   return (
-    <div>
+    <AdminLayoutWrapper>
       {user && (
         <AdminHeader>
           <Button
@@ -32,6 +32,6 @@ export const AdminLayout = ({ children }) => {
         </AdminHeader>
       )}
       <ContentWrapper>{children}</ContentWrapper>
-    </div>
+    </AdminLayoutWrapper>
   );
 };
