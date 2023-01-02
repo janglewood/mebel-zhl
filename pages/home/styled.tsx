@@ -1,5 +1,3 @@
-import { Text } from "@/components/Text";
-import Image from "next/image";
 import styled from "styled-components";
 
 export const HomePageWrapper = styled.div`
@@ -9,7 +7,7 @@ export const HomePageWrapper = styled.div`
   width: 100%;
   position: relative;
   gap: 32px;
-  /* background: ${({ theme }) => theme.palette.backgrounds.homepage}; */
+  z-index: 1;
 `;
 
 export const TopCatalogListBlock = styled.div`
