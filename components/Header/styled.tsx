@@ -8,6 +8,7 @@ export const HeaderWrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  z-index: 1;
 `;
 
 export const NavWrapper = styled.nav`

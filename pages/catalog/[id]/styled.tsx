@@ -9,6 +9,7 @@ export const CatalogItemPageWrapper = styled.div`
   position: relative;
   gap: 32px;
   flex: 1;
+  z-index: 1;
 `;
 
 export const ImageWrapper = styled.span`

@@ -41,7 +41,7 @@ export const theme: DefaultTheme = {
     },
     backgrounds: {
       main: "#FFFFFF",
-      homepage:
+      mainGradient:
         "linear-gradient(359.6deg, rgba(166, 233, 200, 0.46) 25.06%, rgba(255, 255, 255, 0) 133.85%)",
       buttons: {
         primary: "#5454ba",

@@ -12,4 +12,17 @@ export const StyledLayoutWrapper = styled.div`
   padding: 16px;
   gap: 24px;
   background-color: ${({ theme }) => theme.palette.backgrounds.main};
+  position: relative;
+`;
+
+export const LayoutBackground = styled.span`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: ${({ theme }) => theme.palette.backgrounds.mainGradient};
+
+  backdrop-filter: blur(25px);
+  z-index: 0;
+  width: 100%;
+  height: 100%;
 `;

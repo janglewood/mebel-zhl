@@ -23,7 +23,7 @@ declare module "styled-components" {
       };
       backgrounds: {
         main: string;
-        homepage: string;
+        mainGradient: string;
         buttons: {
           primary: string;
           disabled: string;

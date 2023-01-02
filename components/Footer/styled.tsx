@@ -10,4 +10,5 @@ export const FooterWrapper = styled.footer`
   border-top: 1px solid gray;
   padding: 32px 0;
   margin-top: 64px;
+  z-index: 1;
 `;

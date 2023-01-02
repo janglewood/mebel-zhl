@@ -1,7 +1,7 @@
 export const navigationConfig = [
   {
     title: "О НАС",
-    href: "/",
+    href: "/about",
   },
   {
     title: "КАТАЛОГ",

@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { StyledLayoutWrapper } from "./styled";
+import { LayoutBackground, StyledLayoutWrapper } from "./styled";
 
 export const Layout = ({ children }) => {
   return (
@@ -8,6 +8,7 @@ export const Layout = ({ children }) => {
       <Header />
       {children}
       <Footer />
+      <LayoutBackground />
     </StyledLayoutWrapper>
   );
 };
